@@ -1,0 +1,69 @@
+<div class="modal-header p-4">
+  <h5 class="modal-title m-0" id="exampleModalLabel">{{create ? 'NUEVO PRODUCTO' : 'Arena'}}</h5>
+  <button type="button" class="btn-close" (click)="close()"></button>
+</div>
+<div class="modal-body p-0">
+  <form>
+    <div class="d-flex pb-2 flex-column">
+      <input type="file" (change)="onFileSelect($event)" id="newImg" hidden *ngIf="!view">
+      <img width="100%" height="300px" id="imgCreate" src="assets/img/{{create ? '' : 'cement.png'}}" *ngIf="imgCreated || view || !create">
+      <label class="btn-img fas fa-plus color-1 rounded-7 {{imgCreated || !create ? 'position-absolute end-0 m-3 newImg' : 'mx-auto mt-4'}}" for="newImg" *ngIf="!view"></label>
+      <label class="mx-auto fw-500 mt-2" *ngIf="create && !imgCreated">Imagen de producto</label>
+    </div>
+    <div class="p-4 pt-3">
+      <div *ngIf="view; else editQuantity">
+        <small class="text-gris">Cantidad en stock</small>
+        <div class="p-2 border-bottom mb-3" style="padding-top: 1px !important">
+          22
+        </div>
+      </div>
+      <ng-template #editQuantity>
+        <div class="form-floating mb-3">
+          <input class="form-control" value="22" type="text" placeholder=" ">
+          <label for="floatingPassword">Cantidad en stock</label>
+        </div>
+      </ng-template>
+      <div *ngIf="view; else editSupplier">
+        <small class="text-gris">Proveedor</small>
+        <div class="p-2 border-bottom mb-3" style="padding-top: 1px !important">
+          Ambuja Cement
+        </div>
+      </div>
+      <ng-template #editSupplier>
+        <div class="form-floating mb-3">
+          <input class="form-control" value="Ambuja Cement" type="text" placeholder=" ">
+          <label for="floatingPassword">Proveedor</label>
+        </div>
+      </ng-template>
+      <div *ngIf="view; else editProduct">
+        <small class="text-gris">Producto ID</small>
+        <div class="p-2 border-bottom mb-3" style="padding-top: 1px !important">
+          #247851200
+        </div>
+      </div>
+      <ng-template #editProduct>
+        <div class="form-floating mb-3">
+          <input class="form-control" value="#247851200" type="text" placeholder=" ">
+          <label for="floatingPassword">Producto ID</label>
+        </div>
+      </ng-template>
+      <div *ngIf="view; else editSale">
+        <small class="text-gris">Precio de veta</small>
+        <div class="p-2 border-bottom" style="padding-top: 1px !important">
+          22000.0
+        </div>
+      </div>
+      <ng-template #editSale>
+        <div class="form-floating">
+          <input class="form-control" style="padding-right: 30px;" value="22000.0" type="text" placeholder=" ">
+          <label for="floatingPassword">Precio de veta</label>
+        </div>
+      </ng-template>
+    </div>
+  </form>
+</div>
+<label *ngIf="!create" class="fas {{view ? 'fa-edit' : 'fa-times'}} btn-edit btn btn-2 border shadow-sm rounded-circle" style="padding: {{view ? '6px 9px 6px 11px' : '6px 14px'}}" (click)="view = !view"></label>
+<div class="modal-footer p-4">
+  <button type="button" class="btn btn-1" (click)="view = !view" *ngIf="!view">Guardar</button>
+  <button type="button" class="btn btn-1" *ngIf="view" (click)="close()">De acuerdo</button>
+</div>

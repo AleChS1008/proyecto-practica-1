@@ -1,0 +1,42 @@
+a {
+  text-decoration: none;
+}
+
+.ctn1 {
+  font-family: "Gravitas One", monospace;
+}
+.ctn2 {
+  background-image: url("../../../assets/img/desktop/image-graphic-design.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  position: relative;
+}
+.ctn3 {
+  background-image: url("../../../assets/img/desktop/image-photography.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  position: relative;
+}
+.img1 {
+  background-image: url("../../../assets/img/desktop/image-transform.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+}
+.img2 {
+  background-image: url("../../../assets/img/desktop/image-stand-out.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+}
+// @media (max-width: 1020px) {
+//   .ctn {
+//     background-image: url("../../../assets/img/mobile/image-header.jpg");
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     height: 100vh;
+//     width: 100vw;
+//   }
+// }

@@ -1,0 +1,21 @@
+.accordion-button{
+  background: transparent !important;
+  padding: 0 15px;
+  box-shadow: none !important;
+}
+.accordion-button::after {
+  content: "\f078";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  background-image: none !important;
+  -webkit-text-stroke: 1px #fff;
+  margin-left: 10px;
+  padding-bottom: 24px;
+}
+.accordion-button:not(.collapsed){
+  color: #ff0000;
+}
+input, select{
+  border: 0;
+  border-bottom: 1px solid #ced4da;
+}

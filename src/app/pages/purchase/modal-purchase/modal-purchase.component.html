@@ -1,0 +1,128 @@
+<div class="modal-header p-4">
+  <h5 class="modal-title m-0" id="exampleModalLabel">{{create ? 'Nueva compra' : 'Arena'}}</h5>
+  <button type="button" class="btn-close" (click)="close()"></button>
+</div>
+<form class="modal-body p-4">
+  <div class="row">
+    <div class="col-md-6" *ngIf="view; else editRut">
+      <small class="text-gris">RUT</small>
+      <div class="p-2 border-bottom mb-3">
+        12.345.678-9
+      </div>
+    </div>
+    <ng-template #editRut>
+      <div class="col-md-6 mb-3">
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder=" ">
+          <label for="floatingPassword">RUT</label>
+        </div>
+      </div>
+    </ng-template>
+    <div class="col-md-6" *ngIf="view; else editProv">
+      <small class="text-gris">Proveedor</small>
+      <div class="p-2 border-bottom mb-3">
+        Lubricentro champa
+      </div>
+    </div>
+    <ng-template #editProv>
+      <div class="col-md-6 mb-3">
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder=" ">
+          <label for="floatingPassword">Supplier</label>
+        </div>
+      </div>
+    </ng-template>
+    <div class="col-md-6" *ngIf="view; else editValor">
+      <small class="text-gris">Valor</small>
+      <div class="p-2 border-bottom mb-3">
+        $20.00
+      </div>
+    </div>
+    <ng-template #editValor>
+      <div class="col-md-6 mb-3">
+        <div class="form-floating">
+          <input class="form-control" type="number" placeholder=" ">
+          <label for="floatingPassword">Valor</label>
+        </div>
+      </div>
+    </ng-template>
+    <div class="col-md-6" *ngIf="view; else editFac">
+      <small class="text-gris">Factura</small>
+      <div class="p-2 border-bottom mb-3">
+        Backhoe loader
+      </div>
+    </div>
+    <ng-template #editFac>
+      <div class="col-md-6 mb-3">
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder=" ">
+          <label for="floatingPassword">Factura</label>
+        </div>
+      </div>
+    </ng-template>
+    <div class="col-md-6" *ngIf="view; else editTipo">
+      <small class="text-gris">Tipo</small>
+      <div class="p-2 border-bottom mb-3">
+        Oil
+      </div>
+    </div>
+    <ng-template #editTipo>
+      <div class="col-md-6 mb-3">
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder=" ">
+          <label for="floatingPassword">Tipo</label>
+        </div>
+      </div>
+    </ng-template>
+    <div class="col-md-6" *ngIf="view; else editPay">
+      <small class="text-gris">Metodo de pago</small>
+      <div class="p-2 border-bottom mb-3">
+        Cash
+      </div>
+    </div>
+    <ng-template #editPay>
+      <div class="col-md-6 mb-3">
+        <div class="form-floating">
+          <select class="form-select">
+            <option>Cash</option>
+            <option>Card</option>
+            <option>Transfer</option>
+          </select>
+          <label for="floatingPassword">Metodo de pago</label>
+        </div>
+      </div>
+    </ng-template>
+    <div class="col-12" *ngIf="view; else editComment">
+      <small class="text-gris">Comentarios</small>
+      <div class="p-2 border mb-3 mt-2 overflow-auto" style="height: 89px;">
+        10 X 10 X 20
+      </div>
+    </div>
+    <ng-template #editComment>
+      <div class="col-12 mb-3">
+        <div class="form-floating pt-4">
+          <textarea class="form-control pt-0" type="text" placeholder=" "></textarea>
+          <label for="floatingPassword">Comentarios</label>
+        </div>
+      </div>
+    </ng-template>
+    <div class="col-12" *ngIf="view">
+      <small class="text-gris">Add Image</small>
+      <div class="d-flex gap-2 mt-3">
+        <img class="rounded-7" width="45px" height="45px" src="assets/img/oil.png">
+      </div>
+    </div>
+    <div class="col-12" *ngIf="create">
+      <small class="text-gris">Add Image</small>
+      <div class="d-flex gap-2 mt-3">
+        <input type="file" (change)="onFileSelect($event)" id="newImg" hidden>
+        <img class="rounded-7" width="45px" height="45px" id="imgCreate" src="" style="object-fit: cover;" *ngIf="imgCreated">
+        <label class="btn-img fas fa-plus color-1 rounded-7" for="newImg"></label>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="modal-footer p-4">
+  <button type="button" class="btn btn-2" (click)="close()" *ngIf="!view">{{create ? 'Cancelar' : ''}}</button>
+  <button type="button" class="btn btn-1" (click)="close()">{{view ? 'De acuerdo' : '' || create ? 'Crear comprar' : ''}}</button>
+</div>

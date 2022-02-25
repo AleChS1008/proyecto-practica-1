@@ -1,0 +1,29 @@
+input, select{
+  border: 0;
+  border-bottom: 1px solid #ced4da;
+}
+tbody tr > td{
+  border-bottom: none;
+}
+.btn-plus{
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 5px;
+  border-width: 2px;
+  transition: 0.3s;
+}
+.my-backdrop{
+  border-radius: 15px;
+  background: rgba(66, 66, 66, 0.342);
+}
+.modal > .modal-dialog{
+  margin-top: -40px;
+  transition: 0.3s;
+}
+.modal.show > .modal-dialog{
+  margin-top: 0px;
+}
+.fas{
+  font-weight: 600;
+  -webkit-text-stroke: 1px #fff;
+}

@@ -1,0 +1,52 @@
+input, select{
+  border: 0;
+  border-bottom: 1px solid #ced4da;
+}
+.btn-edit{
+  font-weight: 600;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  bottom: 104px;
+  z-index: 1000;
+  background: #fff;
+  -webkit-text-stroke: 0.7px #fff;
+}
+
+#imgCreate{
+  border-radius: 0 0 20px 20px;
+  object-fit: cover;
+}
+
+.btn-img{
+  background: #e4e8eb;
+  padding: 12.5px 13.8px;
+  font-size: 20px;
+  -webkit-text-stroke: 1px #e4e8eb;
+  cursor: pointer;
+}
+.newImg{
+  opacity: 0.5;
+}
+#imgCreate:hover + .newImg, .newImg:hover{
+  opacity: 1;
+}
+
+.fa-times{
+  animation-name: size1;
+  animation-duration: 0.4s;
+}
+.fa-edit{
+  animation-name: size2;
+  animation-duration: 0.4s;
+}
+
+
+@keyframes size1 {
+  0%{transform: scale(0.1)}
+  100%{transform: scale(1)}
+}
+@keyframes size2 {
+  0%{transform: scale(0.1)}
+  100%{transform: scale(1)}
+}

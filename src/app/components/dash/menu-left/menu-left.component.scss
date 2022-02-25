@@ -1,0 +1,71 @@
+#menu-left{
+  width: 100px !important;
+  position: absolute;
+  transition:  0.3s;
+  min-height: calc(100vh - 85px);
+}
+.div1{
+  width: 100px !important;
+  transition:  0.3s;
+}
+.fa-slash{
+  text-shadow: -1px 1.5px 0 #fff, 1px -1.5px 0 #fff;
+}
+.fa-thumbtack{
+  opacity: 0;
+  transition: 0.2s;
+}
+.hover-1 i{
+  font-size: 35px !important;
+  min-width: 100%;
+  text-align: center;
+  transition: 0.15s;
+  transition-delay: 0.15s;
+}
+.hover-1 span{
+  margin-left: -40px;
+  opacity: 0;
+  visibility: hidden;
+}
+#menu-left.show + .div1{
+  width: 250px !important;
+  transition:  0.3s;
+}
+#menu-left:hover, #menu-left.show{
+  width: 250px !important;
+}
+#menu-left.show > .hover-1 > i, #menu-left:hover > .hover-1 > i{
+  min-width: 35px;
+  font-size: 25px !important;
+  transition: 0.1s;
+  transition-delay: 0s;
+}
+#menu-left.show > .hover-1 > span, #menu-left:hover > .hover-1 > span{
+  margin-left: 0px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s, visibility 0.2s, margin-left 0.2s;
+  transition-delay: 0.18s;
+}
+#menu-left.show .fa-thumbtack, #menu-left:hover .fa-thumbtack{
+  opacity: 1;
+}
+
+@media (max-width: 720px) {
+  #menu-left, #menu-left:not(.show){
+    width: 0 !important;
+  }
+  #menu-left > *{
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  #menu-left.show > *{
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: 0.2s;
+    transition-delay: 0.05s;
+  }
+  .div1{
+    display: none;
+  }
+}

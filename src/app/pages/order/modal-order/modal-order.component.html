@@ -1,0 +1,355 @@
+<div class="position-relative">
+  <div class="modal-header p-4">
+    <h5 class="modal-title m-0" id="exampleModalLabel">{{create ? 'Crear Pedido' : 'Pedido #1'}}</h5>
+    <button type="button" class="btn-close" (click)="close()"></button>
+  </div>
+  <div class="modal-body p-4" *ngIf="view">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <small class="text-gris">Estado</small>
+        <div class="p-2 border-bottom">
+          Full
+        </div>
+      </div>
+      <label class="fw-500 mb-1">DETALLES DEL CLIENTE</label>
+      <div class="col-md-6 mb-3">
+        <small class="text-gris">Teléfono</small>
+        <div class="p-2 border-bottom">
+          325748963
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <small class="text-gris">Nombre</small>
+        <div class="p-2 border-bottom">
+          John
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <small class="text-gris">Apellido</small>
+        <div class="p-2 border-bottom">
+          Magnat
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <small class="text-gris">Ubicación</small>
+        <div class="p-2 border-bottom">
+          Avenida Nueva Costanera, 3698 - Piso 42
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <small class="text-gris">Dirección</small>
+        <div class="p-2 border-bottom">
+          Avenida Nueva Costanera, 3698 - Piso 42
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <small class="text-gris">Fecha</small>
+        <div class="p-2 border-bottom">
+          07-02-21
+        </div>
+      </div>
+      <label class="fw-500 mb-3">Detalles de pedido</label>
+      <div class="col-md-6 mb-3">
+        <div class="border shadow-sm rounded-7 table-responsive pb-3">
+          <table class="table m-0">
+            <thead>
+              <tr>
+                <th scope="col">Producto</th>
+                <th scope="col" class="text-end">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">Cement</td>
+                <td class="text-end">3</td>
+              </tr>
+              <tr>
+                <td scope="row">Cement</td>
+                <td class="text-end">3</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center color-1" *ngIf="edit">
+            <a role="button" data-bs-toggle="modal" data-bs-target="#modalItem">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+      <label class="fw-500 mb-3">Pago</label>
+      <div class="col-md-6 mb-3">
+        <small class="text-gris">Tipo de pago</small>
+        <div class="p-2 border-bottom">
+          Efectivo
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-body p-4" *ngIf="!view">
+    <form class="row">
+      <div class="col-12" *ngIf="edit">
+        <div class="form-floating col-md-6">
+          <select class="form-select mb-3">
+            <option>En progreso</option>
+            <option>Full</option>
+            <option>option 3</option>
+          </select>
+          <label for="floatingInput">Estado</label>
+        </div>
+      </div>
+      <label class="fw-500 mb-2">Detalles de cliente</label>
+      <div class="col-md-6 mb-3">
+        <div class="form-floating">
+          <input class="form-control" type="number" placeholder=" ">
+          <label for="floatingPassword">Teléfono</label>
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder=" ">
+          <label for="floatingPassword">Nombre</label>
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder=" ">
+          <label for="floatingPassword">Apellido</label>
+        </div>
+      </div>
+      <div class="col-md-6" *ngIf="create">
+        <div class="form-floating mb-3">
+          <select class="form-select">
+            <option>Abrantes</option>
+            <option>Chad</option>
+            <option>Paine</option>
+          </select>
+          <label for="floatingInput">State</label>
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <div class="form-floating">
+          <input class="form-control" type="text" placeholder=" ">
+          <label for="floatingPassword">Ubicación</label>
+        </div>
+      </div>
+      <div class="col-md-6 mb-3" *ngIf="create">
+        <div class="form-floating">
+          <input class="form-control" type="date">
+          <label for="floatingPassword">Agregar Fecha de inicio</label>
+        </div>
+      </div>
+      <label class="fw-500 mb-3">PRODUCTOS</label>
+      <div class="col-md-6 mb-3">
+        <div class="border shadow-sm rounded-7 table-responsive pb-3">
+          <table class="table m-0">
+            <thead>
+              <tr>
+                <th scope="col">Produvtos</th>
+                <th scope="col" class="text-end">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">Cement</td>
+                <td class="text-end">3</td>
+              </tr>
+              <tr>
+                <td scope="row">Cement</td>
+                <td class="text-end">3</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center color-1" *ngIf="edit">
+            <a role="button" data-bs-toggle="modal" data-bs-target="#modalItem">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mb-3" *ngIf="create">
+        <button class="btn btn-2" data-bs-toggle="modal" data-bs-target="#modalItem">Agregar producto</button>
+      </div>
+      <label class="fw-500 mb-3">Equipamiento</label>
+      <div class="col-md-12 mb-3">
+        <div class="border shadow-sm rounded-7 table-responsive pb-3">
+          <table class="table align-middle m-0" style="min-width: 550px;">
+            <thead>
+              <tr>
+                <th scope="col">Maquinaria</th>
+                <th scope="col">Fecha y hora</th>
+                <th scope="col">Fecha y hora final</th>
+                <th scope="col">Lapso de tiempo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">Backhoe</td>
+                <td>05-01-21 10:00 AM</td>
+                <td>05-01-21 10:00 AM</td>
+                <td>6h 20min</td>
+              </tr>
+              <tr>
+                <td scope="row">Backhoe</td>
+                <td>05-01-21 10:00 AM</td>
+                <td>05-01-21 10:00 AM</td>
+                <td>6h 20min</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center color-1" *ngIf="edit">
+            <a role="button" data-bs-toggle="modal" data-bs-target="#modalEquiment">Ver detalles</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mb-3" *ngIf="create">
+        <button class="btn btn-2" data-bs-toggle="modal" data-bs-target="#modalEquiment">Agregar equipo</button>
+      </div>
+      <label class="fw-500 mb-2">Pago</label>
+      <div class="col-md-6 mb-3">
+        <div class="form-floating mb-3">
+          <select class="form-select">
+            <option>Cash</option>
+            <option>Card</option>
+            <option>Transfer</option>
+          </select>
+          <label for="floatingInput">Tipo de pago</label>
+        </div>
+      </div>
+      <div>
+        <label class="fw-500 mb-2">Para cerrar el pedido se debe marcar como PAGADO y HECHO</label>
+        <div class="form-check">
+          <input class="form-check-input border" type="checkbox" value="" id="markPay">
+          <label class="form-check-label" for="markPay">
+            Marcar como Pagado
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input border" type="checkbox" value="" id="markMake">
+          <label class="form-check-label" for="markMake">
+            Marcar como hecho
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer p-4">
+    <button type="button" class="btn btn-2" (click)="close()" *ngIf="!view">{{create ? 'CANCELAR' : 'DE ACUERDO'}}</button>
+    <button type="button" class="btn btn-1" (click)="close()">{{view ? 'DE ACUERDO' : '' || create ? 'CREAR PEDIDO' : 'CERRAR PEDIDO'}}</button>
+  </div>
+  <div class="modal position-absolute fade" id="modalItem" data-bs-backdrop="false" aria-hidden="true">
+    <div class="position-absolute top-0 bottom-0 end-0 start-0 my-backdrop" data-bs-dismiss="modal" aria-label="Close"></div>
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="btn btn-2 fas fa-plus rounded-circle btn-plus"style="transform:rotate({{new ? '135deg' : '0deg'}})" *ngIf="!create" (click)="new = !new"></button>
+          <h5 class="modal-title mx-auto" id="exampleModalLabel">Item</h5>
+          <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="form-floating" *ngIf="create || new">
+            <select class="form-select">
+              <option>Arena</option>
+              <option>Cement</option>
+              <option>Gravilla</option>
+            </select>
+            <label for="floatingInput">Select an Item</label>
+          </div>
+          <div class="d-flex p-3 align-items-center" *ngIf="create || new">
+            <span>Quantity</span>
+            <label class="border-1 rounded-7 color-1 ms-auto">
+              <label role="button" class="px-2 py-1 fas fa-plus"></label>
+              <label class="px-3 py-1" style="border-left: 1px solid #ff0000; border-right: 1px solid #ff0000;">2</label>
+              <label role="button" class="px-2 py-1 fas fa-minus"></label>
+            </label>
+          </div>
+          <div class="overflow-auto" style="max-height: 400px;">
+            <table class="table m-0 align-middle" *ngIf="!create">
+              <thead>
+                <tr>
+                  <th scope="col">Product</th>
+                  <th scope="col" class="text-end">Quantity </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row">Cement</td>
+                  <td class="text-end">
+                    <label class="p-1" *ngIf="!modilfy">3</label>
+                    <label *ngIf="modilfy" class="border-1 rounded-7 color-1">
+                      <label role="button" class="px-2 py-1 fas fa-plus"></label>
+                      <label class="px-3 py-1" style="border-left: 1px solid #ff0000; border-right: 1px solid #ff0000;">2</label>
+                      <label role="button" class="px-2 py-1 fas fa-minus"></label>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td scope="row">Cement</td>
+                  <td class="text-end">
+                    <label class="p-1" *ngIf="!modilfy">3</label>
+                    <label *ngIf="modilfy" class="border-1 rounded-7 color-1">
+                      <label role="button" class="px-2 py-1 fas fa-plus"></label>
+                      <label class="px-3 py-1" style="border-left: 1px solid #ff0000; border-right: 1px solid #ff0000;">2</label>
+                      <label role="button" class="px-2 py-1 fas fa-minus"></label>
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="border-top">
+          <button type="button" class="btn-transparent color-1 w-50 p-3 border-end" (click)="modilfy = !modilfy" *ngIf="!new">{{modilfy || create ? 'CANCEL' : 'MODILFY'}}</button>
+          <button type="button" class="btn-transparent color-1 w-50 p-3 border-end" *ngIf="new">AGREGAR</button>
+          <button type="button" class="btn-transparent color-1 w-50 p-3" data-bs-dismiss="modal">CONFIRM</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal position-absolute fade" id="modalEquiment" data-bs-backdrop="false" aria-hidden="true">
+    <div class="position-absolute top-0 bottom-0 end-0 start-0 my-backdrop" data-bs-dismiss="modal" aria-label="Close"></div>
+    <div class="modal-dialog modal-dialog-centered" style="max-width: {{create ? '500px' : '720px'}}">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="btn btn-2 fas fa-plus rounded-circle btn-plus" style="transform:rotate({{new ? '135deg' : '0deg'}})" *ngIf="!create" (click)="new = !new"></button>
+          <h5 class="modal-title mx-auto" id="exampleModalLabel">Equiment</h5>
+          <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="form-floating mb-3" *ngIf="create || new">
+            <select class="form-select">
+              <option>Backloe Loader</option>
+              <option>Skid Steer</option>
+            </select>
+            <label for="floatingInput">Select an Equipment</label>
+          </div>
+          <div class="overflow-auto" style="max-height: 400px">
+            <table class="table align-middle m-0" style="min-width: 600px;" *ngIf="!create">
+              <thead>
+                <tr>
+                  <th scope="col">Team</th>
+                  <th scope="col">Date & Time</th>
+                  <th scope="col">End Date and Time</th>
+                  <th scope="col">Time Lapse</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row">Backhoe</td>
+                  <td>05-01-21 10:00 AM</td>
+                  <td>05-01-21 10:00 AM</td>
+                  <td>6h 20min</td>
+                </tr>
+                <tr>
+                  <td scope="row">Backhoe</td>
+                  <td>05-01-21 10:00 AM</td>
+                  <td>05-01-21 10:00 AM</td>
+                  <td>6h 20min</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="border-top">
+          <button type="button" class="btn-transparent color-1 w-50 p-3 border-end">{{new ? 'AGREGAR' : 'CANCEL'}}</button>
+          <button type="button" class="btn-transparent color-1 w-50 p-3" data-bs-dismiss="modal">CONFIRM</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

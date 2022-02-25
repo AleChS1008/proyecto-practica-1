@@ -1,0 +1,43 @@
+<div class="d-flex bg-auth">
+  <div class="m-auto p-sm-5 p-4 p-md-4 rounded-7 bg-white animate__animated animate__fadeInDown">
+    <div class="d-flex mb-4">
+      <img class="mx-auto" width="100px" height="100px" src="assets/img/logo.png">
+    </div>
+    <form class="row g-3" [formGroup]="SignInForm">
+      <div>
+        <div class="form-floating">
+          <input type="email" class="form-control" [ngClass]="{'border-bottom-1' : SignInForm.controls['userOrEmail'].touched && SignInForm.controls['userOrEmail'].invalid}" formControlName="userOrEmail" placeholder=" ">
+          <label for="floatingInput">Correo electrónico</label>
+        </div>
+        <small class="color-4" *ngIf="SignInForm.controls['userOrEmail'].touched && SignInForm.controls['userOrEmail'].errors?.required">El email es requerido</small>
+      </div>
+      <div>
+        <div class="form-floating">
+          <input class="form-control pe-5" [ngClass]="{'border-bottom-1' : SignInForm.controls['password'].touched && SignInForm.controls['password'].invalid}" placeholder=" " formControlName="password" type="{{view ? 'text' : 'password'}}">
+          <i class="far fa-eye position-absolute top-0 end-0 my-4 mx-3" (click)="view = true" *ngIf="!view"  role="button"></i>
+          <i class="far fa-eye-slash position-absolute top-0 end-0 my-4 mx-3" (click)="view = !view" *ngIf="view" role="button"></i>
+          <label class="floatingInput">Contraseña</label>
+        </div>
+        <small class="color-4" *ngIf="SignInForm.controls['password'].touched && SignInForm.controls['password'].errors?.required">La contraseña es requerida</small>
+      </div>
+      <div>
+        <div class="form-check">
+          <input class="form-check-input" formControlName="remember" type="checkbox" id="remember">
+          <label class="form-check-label" for="remember">
+            Recuerdame
+          </label>
+        </div>
+      </div>
+      <div class="mt-4">
+        <button class="btn btn-1 w-100" (click)="login()">
+          Ingresar
+        </button>
+      </div>
+      <div class="text-center">
+        <div>¿No tienes una cuenta? <a class="color-1" routerLink="/auth/sign-up">Registrarse</a></div>
+        <a class="color-1" routerLink="/auth/forgot-password">¿Olvidaste tu contraseña?</a>
+      </div>
+    </form>
+  </div>
+</div>
+

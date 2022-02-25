@@ -1,0 +1,17 @@
+.accordion-button{
+  background-color: #163edf !important;
+}
+.accordion-button::after {
+  content: "\f078";
+  color: #fff;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  background-image: none !important;
+}
+#coll:not(.collapsed):after{
+  content: 'Cancelar';
+  color: #f44336;
+}
+#coll.collapsed:after{
+  content: 'Cambiar contraseña';
+}

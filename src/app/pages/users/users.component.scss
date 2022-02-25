@@ -1,0 +1,12 @@
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+[list]::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+.nav-link.active{
+  color: #2aa9e1 !important;
+}
+.nav-link:hover{
+  color: #666;
+}

@@ -1,0 +1,107 @@
+a {
+  text-decoration: none;
+}
+.dropdown-1 {
+  display: block;
+  transition: 0.2s;
+  border-radius: 7px;
+  opacity: 0;
+  visibility: hidden;
+  top: 100%;
+  left: auto;
+  right: -5px;
+  margin-top: 20px;
+}
+.dropdown-1[data-bs-popper] {
+  left: auto;
+  right: -5px;
+}
+
+.dropdown-1.show {
+  transition: 0.2s;
+  margin-top: 5px;
+  opacity: 1;
+  visibility: visible;
+}
+.dropdown-options {
+  color: #000;
+  padding: 10px 16px;
+}
+.dropdown-options:hover {
+  color: #ff0000;
+}
+.img-user {
+  border: 2px solid #fff;
+}
+.fa-bars {
+  font-size: 30px;
+  color: #fff;
+  margin-right: 20px;
+  cursor: pointer;
+  animation-name: hide;
+  animation-duration: 0.4s;
+}
+.nav-link {
+  color: #000;
+}
+
+@keyframes hide {
+  0% {
+    margin-left: -40px;
+    opacity: 0;
+  }
+  100% {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}
+.ctn {
+  background-image: url("../../../../assets/img/desktop/image-header.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
+.btn {
+  color: #fff;
+  margin: 3px;
+}
+.btn:focus {
+  background-color: #ffff;
+  color: #000;
+}
+.btn:hover {
+  background-color: #ffff;
+  color: #000;
+}
+@media (max-width: 770px) {
+  .cssarrow {
+    position: relative;
+    background: #fff;
+    margin-top: 19px;
+    justify-content: center;
+    color: #000;
+  }
+  .cssarrow:after {
+    bottom: 100%;
+    right: 0;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: #fff;
+    border-width: 15px;
+    margin-right: 0px;
+  }
+  .btn {
+    color: rgb(24, 24, 24);
+    margin: 5px;
+  }
+  .btn:focus {
+    background-color: yellow;
+    color: #000;
+  }
+}

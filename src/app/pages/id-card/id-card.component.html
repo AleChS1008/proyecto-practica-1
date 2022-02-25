@@ -1,0 +1,23 @@
+<nav class="p-3 bg-4 text-white fw-500 fs-5" *ngIf="form">
+  <i class="fas fa-arrow-left position-absolute fs-4 text-white" routerLink="/onboarding/firma-contrato" role="button"></i>
+  <div class="text-center"><img src="assets/img/logo.png" width="31px" height="32px ">
+    <label for="">Valida tu identidad</label>
+  </div>
+</nav>
+<main class="d-flex justify-content-center" *ngIf="form">
+  <section>
+    <div class="p-4 shadow-sm border text-center mt-5 rounded-7" [style.width]="camera ? '700px' : '400px'">
+      <i class="{{!img1 ? 'far fa-id-card' : !img2 ? 'far fa-credit-card' : 'fas fa-camera'}} mb-2" style="font-size: 70px;" *ngIf="!camera"></i>
+      <div class="fs-4" *ngIf="!camera && !img2">Ahora, necesitamos que tomes una foto del {{!img1 ? 'frente' : 'dorso'}} de tu cédula de identidad.</div>
+      <div class="fs-4" *ngIf="img2 && !camera">Ya casi terminamos! toma por favor una foto de tu rostro.</div>
+      <small *ngIf="img2 && !camera">Es para proteger tu identidad y verificar que la cedula sea tuya.</small>
+      <video width="100%" height="400px" id="video" style="object-fit: cover;" playsinline autoplay *ngIf="camera"></video>
+      <canvas id="canvas" width="640" height="480" *ngIf="camera" hidden></canvas>
+      <button class="btn btn-1 mt-3 w-100" (click)="camera ? capPhoto() : openCamera()">
+        {{camera ? 'Sacar foto' : 'Iniciar camara'}}
+      </button>
+      <input id="file" type="file" hidden (change)="capPhoto($event)">
+      <label for="file" class="btn btn-1 mt-3 w-100">Subir foto</label>
+    </div>
+  </section>
+</main>

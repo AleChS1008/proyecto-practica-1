@@ -1,0 +1,69 @@
+<div class="d-flex bg-auth">
+  <div class="rounded-7 m-md-auto mx-auto bg-white animate__animated animate__fadeInDown">
+    <div class="border-bottom p-3 d-flex align-items-center">
+      <img class="me-3" width="50px" height="50px" src="assets/img/logo.png">
+      <span class="fs-2">Registro</span>
+    </div>
+    <div class="p-4">
+      <form class="row g-3" [formGroup]="formUsers" (ngSubmit)="createU(formUsers.value)">
+        <div class="col-md-6">
+          <div class="form-floating">
+            <input type="number" class="form-control" [ngClass]="{'border-bottom-1' : formUsers.controls['number'].touched && formUsers.controls['number'].invalid}" formControlName="number" placeholder=" ">
+            <label for="floatingInput">Nombre</label>
+          </div>
+          <small class="color-4" *ngIf="formUsers.controls['number'].touched && formUsers.controls['number'].errors?.required">El numero es requerido</small>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating">
+            <input type="text" class="form-control" [ngClass]="{'border-bottom-1' : formUsers.controls['fullname'].touched && formUsers.controls['fullname'].invalid}" formControlName="fullname" placeholder=" ">
+            <label for="floatingInput">Apellido</label>
+          </div>
+          <small class="color-4" *ngIf="formUsers.controls['fullname'].touched && formUsers.controls['fullname'].errors?.required">El nombre es requerido</small>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating">
+            <input type="email" class="form-control" [ngClass]="{'border-bottom-1' : formUsers.controls['email'].touched && formUsers.controls['email'].invalid}" formControlName="email" placeholder=" ">
+            <label for="floatingInput">Correo electrónico</label>
+          </div>
+          <small class="color-4" *ngIf="formUsers.controls['email'].touched && formUsers.controls['email'].errors?.required">El email es requerido</small>
+          <small class="color-4" *ngIf="formUsers.controls['email'].errors?.pattern">El email no es valido</small>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating">
+            <input type="number" class="form-control" [ngClass]="{'border-bottom-1' : formUsers.controls['telephone'].touched && formUsers.controls['telephone'].invalid}" formControlName="telephone" placeholder=" ">
+            <label for="floatingInput">Teléfono</label>
+          </div>
+          <small class="color-4" *ngIf="formUsers.controls['telephone'].touched && formUsers.controls['telephone'].errors?.required">El Telefono es requerido</small>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating">
+            <input class="form-control pe-5" [ngClass]="{'border-bottom-1' : formUsers.controls['password'].touched && formUsers.controls['password'].invalid}" placeholder=" " formControlName="password" id="pass1" type="{{view ? 'text' : 'password'}}">
+            <i class="far fa-eye position-absolute top-0 end-0 my-4 mx-3" (click)="view = true" *ngIf="!view"  role="button"></i>
+            <i class="far fa-eye-slash position-absolute top-0 end-0 my-4 mx-3" (click)="view = !view" *ngIf="view" role="button"></i>
+            <label class="floatingInput">Contraseña</label>
+          </div>
+          <small class="color-4" *ngIf="formUsers.controls['password'].touched && formUsers.controls['password'].errors?.required">La contraseña es requerido</small>
+          <small class="color-4" *ngIf="formUsers.controls['password'].hasError('minlength')"> debe tener entre 4 y 30 caracterres</small>
+          <small class="color-4" *ngIf="formUsers.controls['password'].hasError('maxlength')"> debe tener entre 4 y 30 caracterres</small>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating">
+            <input class="form-control pe-5" [ngClass]="{'border-bottom-1' : formUsers.controls['confirmPassword'].touched && formUsers.controls['confirmPassword'].invalid}" placeholder=" " id="pass2" formControlName="confirmPassword" type="{{view2 ? 'text' : 'password'}}">
+            <i class="far fa-eye position-absolute top-0 end-0 my-4 mx-3" (click)="view2 = true" *ngIf="!view2"  role="button"></i>
+            <i class="far fa-eye-slash position-absolute top-0 end-0 my-4 mx-3" (click)="view2 = !view2" *ngIf="view2" role="button"></i>
+            <label class="floatingInput">Confirma contraseña</label>
+          </div>
+          <small class="color-4" *ngIf="formUsers.controls['confirmPassword'].touched && formUsers.controls['confirmPassword'].errors?.required">Confirma tu contraseña</small>
+          <small class="color-4" *ngIf="formUsers.controls['confirmPassword'].errors?.sameVal && formUsers.controls['confirmPassword'].value != ''">Este campo no coincide con la contraseña</small>
+        </div>
+        <div>
+          Al registrarte aceptas los <a class="color-1">Terminos, Condicioness</a> y <a class="color-1">Politica de privacidad</a>
+          <button class="btn btn-1 w-100 mt-4" type="submit">
+            Registrarme
+          </button>
+        </div>
+        <div class="text-center">¿Ya tienes una cuenta? <a class="color-1" routerLink="/auth/sign-in">Ingresar</a></div>
+      </form>
+    </div>
+  </div>
+</div>

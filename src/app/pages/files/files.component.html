@@ -1,0 +1,469 @@
+<main class="">
+  <form class="row g-3 m-4">
+    <div class="col-12 p-2 border" style="background-color: #F6F6F6;">
+    <i class="fa fa-align-justify"></i> Filtros
+    </div>
+    <div class="border border-top-0 row pt-3 pb-2 m-auto">
+      <div class="col-md-4">
+        <div class=" mb-3 d-flex align-items-center">
+          <i class="far fa-user fs-5"></i>
+          <label class="ps-2">Nombres y Apellidos:</label>
+          <input type="text" class="form-control" placeholder="Ejemplo: Alejandro XD">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class=" mb-3 d-flex align-items-center">
+          <i class="far fa-envelope fs-5"></i>
+          <label class="ps-2">Correo:</label>
+          <input type="email" class="form-control" placeholder="Ejemplo: Correo@correo.com">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class=" mb-3 d-flex align-items-center">
+          <i class="far fa-id-card fs-5"></i>
+          <label class="ps-2">DNI:</label>
+          <input type="text" class="form-control" placeholder="Ejemplo: 1234567890">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class=" mb-3 d-flex align-items-center">
+          <i class="fas fa-phone fs-5"></i>
+          <label class="ps-2">Teléfono:</label>
+          <input type="text" class="form-control" id="form-phone">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class=" mb-3 d-flex align-items-center">
+          <i class="far fa-calendar-alt fs-5"></i>
+          <label class="ps-2">Desde Fecha de Creación:</label>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class=" mb-3 d-flex align-items-center">
+          <i class="far fa-calendar-alt fs-5"></i>
+          <label class="ps-2">Hasta Fecha de Creación:</label>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3 d-flex align-items-center">
+          <i class="fas fa-tag fs-5"></i>
+          <label class="px-2" for="">Scoring:</label>
+          <select class="form-select" >
+            <option>
+              1
+            </option>
+            <option>
+              2
+            </option>
+            <option>
+              3
+            </option>
+            <option>
+              4
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3 d-flex align-items-center">
+          <i class="fa fa-percent fs-5"></i>
+          <label class="px-2" for="">Completitud:</label>
+          <select class="form-select" >
+            <option>
+              1
+            </option>
+            <option>
+              2
+            </option>
+            <option>
+              3
+            </option>
+            <option>
+              4
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3 d-flex align-items-center">
+          <i class="fa fa-share-alt fs-5"></i>
+          <label class="px-2" for="">Flujos:</label>
+          <select class="form-select" >
+            <option>
+              1
+            </option>
+            <option>
+              2
+            </option>
+            <option>
+              3
+            </option>
+            <option>
+              4
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3 d-flex align-items-center">
+          <i class="fa fa-inbox fs-5"></i>
+          <label class="px-2" for="">Estado de Gestión:</label>
+          <select class="form-select" >
+            <option>
+              1
+            </option>
+            <option>
+              2
+            </option>
+            <option>
+              3
+            </option>
+            <option>
+              4
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3 d-flex align-items-center">
+          <i class="fa fa-users fs-5"></i>
+          <label class="px-2" for="">Asignación:</label>
+          <select class="form-select" >
+            <option>
+              1
+            </option>
+            <option>
+              2
+            </option>
+            <option>
+              3
+            </option>
+            <option>
+              4
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3 d-flex align-items-center">
+          <i class="fa fa-sort fs-5"></i>
+          <label class="px-2" for="">Orden:</label>
+          <select class="form-select" >
+            <option>
+              1
+            </option>
+            <option>
+              2
+            </option>
+            <option>
+              3
+            </option>
+            <option>
+              4
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="p-2 m-0 border border-top-0 ps-4 row" style="background-color: #F6F6F6;">
+      <div class="col-md-6 d-flex justify-content-start">
+        <button type="button" class="btn btn-2">Buscar</button>
+        <input type="reset" class="btn btn-danger ms-2" value="Reset">
+      </div>
+      <div class="col-md-6 d-flex justify-content-end">
+        <button type="button" class="btn btn-2" (click)="changeView()">
+          <i class="fas fa-exchange-alt"></i>
+          Ver como {{form ? 'embudo' : 'tabla'}}
+        </button>
+        <button class="btn btn-success ms-2">Exportar Legajos</button>
+      </div>
+    </div>
+  </form>
+  <div class="m-4 border" *ngIf="form">
+    <div class="p-2 border-bottom" style="background-color: #F6F6F6;">
+      <i class="fa fa-align-justify"></i> Legajos
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle">
+      <thead>
+        <tr>
+          <th scope="col"><i class="far fa-user px-1"></i>Nombres y Apellidos</th>
+          <th scope="col"><i class="fas fa-phone pe-1"></i>Contacto</th>
+          <th scope="col"><i class="far fa-id-card pe-1"></i>DNI</th>
+          <th scope="col"><i class="fa fa-share-alt pe-1"></i>Flujo</th>
+          <th scope="col"><i class="fas fa-tag pe-1"></i>Scoring</th>
+          <th scope="col"><i class="fa fa-percent pe-1"></i>Completitud</th>
+          <th scope="col"><i class="fa fa-inbox pe-1"></i>Estado de Gestión</th>
+          <th scope="col"><i class="far fa-calendar-alt pe-1"></i>Fecha de Creación</th>
+          <th scope="col"><i class="fa fa-users pe-1"></i>Asignación</th>
+          <th scope="col"><i class="fas fa-cogs pe-1"></i>Acciones</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr>
+        <td>Alejandro Chaves</td>
+        <td>123 456 7890</td>
+        <td>1234567890</td>
+        <td>[FREEMIUM] CO PR Simbiosis SAS</td>
+        <td><span class="badge badge-primary">Directo</span></td>
+        <td><span class="badge badge-danger">79%</span></td>
+        <td><span class="badge badge-warning">Desetimado</span></td>
+        <td><div class="text-center">31/01/2022 09:12</div></td>
+        <td></td>
+        <td>
+          <div  class="d-flex gap-2">
+            <button class="btn btn-primary" routerLink="/dash/files">
+              <i class="far fa-file"></i>
+            </button>
+            <button class="btn btn-secondary">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Alejandro Chaves</td>
+        <td>123 456 7890</td>
+        <td>1234567890</td>
+        <td>[FREEMIUM] CO PR Simbiosis SAS</td>
+        <td><span class="badge badge-primary">Directo</span></td>
+        <td><span class="badge badge-danger">79%</span></td>
+        <td><span class="badge badge-warning">Desetimado</span></td>
+        <td><div class="text-center">31/01/2022 09:12</div></td>
+        <td></td>
+        <td>
+          <div  class="d-flex gap-2">
+            <button class="btn btn-primary" routerLink="/dash/files">
+              <i class="far fa-file"></i>
+            </button>
+            <button class="btn btn-secondary">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Alejandro Chaves</td>
+        <td>123 456 7890</td>
+        <td>1234567890</td>
+        <td>[FREEMIUM] CO PR Simbiosis SAS</td>
+        <td><span class="badge badge-primary">Directo</span></td>
+        <td><span class="badge badge-danger">79%</span></td>
+        <td><span class="badge badge-warning">Desetimado</span></td>
+        <td><div class="text-center">31/01/2022 09:12</div></td>
+        <td></td>
+        <td>
+          <div  class="d-flex gap-2">
+            <button class="btn btn-primary" routerLink="/dash/files">
+              <i class="far fa-file"></i>
+            </button>
+            <button class="btn btn-secondary">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+        </table>
+      </div>
+  </div>
+  <section *ngIf="!form">
+    <div class="p-4 overflow-auto">
+      <div cdkDropListGroup class="row row-width gap-3">
+        <div class="col-lg border">
+          <div class="text-center">
+            <span class="badge badge-info my-3 fs-6">Nuevo ({{nuevo.length}})</span>
+          </div>
+          <div cdkDropList [cdkDropListData]="nuevo" class="list d-flex flex-lg-column gap-2" (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let item of nuevo" cdkDrag>
+              <div class="bg-gris2 border rounded-top d-flex gap-2 align-items-center p-2">
+                <i class="far fa-id-card"></i>
+                <span>09079079</span>
+                <button class="btn btn-gris ms-auto">
+                  <i class="fas fa-external-link-alt"></i>
+                </button>
+                <button class="btn btn-gris">
+                  <i class="fas fa-bars"></i>
+                </button>
+              </div>
+              <div class="border border-top-0 rounded-bottom p-2">
+                <div>
+                  <i class="far fa-user"></i>
+                  <span>User name</span>
+                </div>
+                <div>
+                  <i class="far fa-envelope"></i>
+                  <span>User name</span>
+                </div>
+                <div>
+                  <i class="fas fa-phone-alt"></i>
+                  <span>User name</span>
+                </div>
+                <div class="d-flex gap-2 mt-2">
+                  <span class="badge bg-primary">Directo</span>
+                  <span class="badge bg-info">64%</span>
+                  <span class="badge bg-info">Nuevo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg border">
+          <div class="text-center">
+            <span class="badge badge-warning my-3 fs-6">Autenticación fallida</span>
+          </div>
+          <div cdkDropList [cdkDropListData]="autenticacion_fallida" class="list d-flex flex-lg-column gap-2" (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let item of autenticacion_fallida" cdkDrag>
+              <div class="bg-gris2 border rounded-top d-flex gap-2 align-items-center p-2">
+                <i class="far fa-id-card"></i>
+                <span>09079079</span>
+                <button class="btn btn-gris ms-auto">
+                  <i class="fas fa-external-link-alt"></i>
+                </button>
+                <button class="btn btn-gris">
+                  <i class="fas fa-bars"></i>
+                </button>
+              </div>
+              <div class="border border-top-0 rounded-bottom p-2">
+                <div>
+                  <i class="far fa-user"></i>
+                  <span>User name</span>
+                </div>
+                <div>
+                  <i class="far fa-envelope"></i>
+                  <span>User name</span>
+                </div>
+                <div>
+                  <i class="fas fa-phone-alt"></i>
+                  <span>User name</span>
+                </div>
+                <div class="d-flex gap-2 mt-2">
+                  <span class="badge badge-primary">Directo</span>
+                  <span class="badge badge-warning">64%</span>
+                  <span class="badge badge-warning">Autenticación fallida</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg border">
+          <div class="text-center">
+            <span class="badge badge-success my-3 fs-6">Cuenta Abierta</span>
+          </div>
+          <div cdkDropList [cdkDropListData]="cuenta_Abierta" class="list d-flex flex-lg-column gap-2" cdkDropListSortingDisabled (cdkDropListDropped)="drop($event)">
+            <div class="" *ngFor="let item of cuenta_Abierta" cdkDrag>
+              <div class="bg-gris2 border rounded-top d-flex gap-2 align-items-center p-2">
+                <i class="far fa-id-card"></i>
+                <span>09079079</span>
+                <button class="btn btn-gris ms-auto">
+                  <i class="fas fa-external-link-alt"></i>
+                </button>
+                <button class="btn btn-gris">
+                  <i class="fas fa-bars"></i>
+                </button>
+              </div>
+              <div class="border border-top-0 rounded-bottom p-2">
+                <div>
+                  <i class="far fa-user"></i>
+                  <span>User name</span>
+                </div>
+                <div>
+                  <i class="far fa-envelope"></i>
+                  <span>User name</span>
+                </div>
+                <div>
+                  <i class="fas fa-phone-alt"></i>
+                  <span>User name</span>
+                </div>
+                <div class="d-flex gap-2 mt-2">
+                  <span class="badge badge-primary">Directo</span>
+                  <span class="badge badge-info">64%</span>
+                  <span class="badge badge-success">Cuenta Abierta</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg border">
+          <div class="text-center">
+            <span class="badge badge-warning my-3 fs-6">Desetimado</span>
+          </div>
+          <div cdkDropList [cdkDropListData]="desetimado" class="list d-flex flex-lg-column gap-2" (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let item of desetimado" cdkDrag>
+              <div class="bg-gris2 border rounded-top d-flex gap-2 align-items-center p-2">
+                  <i class="far fa-id-card"></i>
+                  <span>09079079</span>
+                  <button class="btn btn-gris ms-auto">
+                    <i class="fas fa-external-link-alt"></i>
+                  </button>
+                  <button class="btn btn-gris">
+                    <i class="fas fa-bars"></i>
+                  </button>
+                </div>
+                <div class="border border-top-0 rounded-bottom p-2">
+                  <div>
+                    <i class="far fa-user"></i>
+                    <span>User name</span>
+                  </div>
+                  <div>
+                    <i class="far fa-envelope"></i>
+                    <span>User name</span>
+                  </div>
+                  <div>
+                    <i class="fas fa-phone-alt"></i>
+                    <span>User name</span>
+                  </div>
+                  <div class="d-flex gap-2 mt-2">
+                    <span class="badge badge-primary">Directo</span>
+                    <span class="badge badge-danger">64%</span>
+                    <span class="badge badge-warning">Desetimado</span>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg border">
+          <div class="text-center">
+            <span class="badge badge-primary my-3 fs-6">Contactado</span>
+          </div>
+          <div cdkDropList [cdkDropListData]="contactado" class="list d-flex flex-lg-column gap-2" (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let item of contactado" cdkDrag>
+              <div class="bg-gris2 border rounded-top d-flex gap-2 align-items-center p-2">
+                  <i class="far fa-id-card"></i>
+                  <span>09079079</span>
+                  <button class="btn btn-gris ms-auto">
+                    <i class="fas fa-external-link-alt"></i>
+                  </button>
+                  <button class="btn btn-gris">
+                    <i class="fas fa-bars"></i>
+                  </button>
+                </div>
+                <div class="border border-top-0 rounded-bottom p-2">
+                  <div>
+                    <i class="far fa-user"></i>
+                    <span>User name</span>
+                  </div>
+                  <div>
+                    <i class="far fa-envelope"></i>
+                    <span>User name</span>
+                  </div>
+                  <div>
+                    <i class="fas fa-phone-alt"></i>
+                    <span>User name</span>
+                  </div>
+                  <div class="d-flex gap-2 mt-2">
+                    <span class="badge badge-primary">Directo</span>
+                    <span class="badge badge-danger">64%</span>
+                    <span class="badge badge-primary">Contactado</span>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+

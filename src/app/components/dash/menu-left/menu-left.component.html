@@ -1,0 +1,26 @@
+<div class="bg-white border-end pt-3" id="menu-left">
+  <div *ngIf="!mobile; else btnMobile">
+    <i class="fas fa-thumbtack position-absolute end-0 top-0 m-2 text-secondary" (click)="hide.emit()" role="button"></i>
+    <i class="fas fa-slash position-absolute end-0 top-0 my-2 mx-1 text-secondary" (click)="hide.emit()" *ngIf="show" role="button"></i>
+  </div>
+  <ng-template #btnMobile>
+    <button class="btn-transparent text-gris position-absolute end-0 top-0 me-2" id="btn-hide" *ngIf="show" (click)="hide.emit()"><b>╳</b></button>
+  </ng-template>
+  <label for="btn-hide" class="d-flex gap-2 align-items-center mx-2 p-2 hover-1" routerLinkActive="color-1" routerLink="/dash/orders" role="button">
+    <i class="fas fa-tasks text-secondary"></i>
+    <span>PEDIDOS</span>
+  </label>
+  <label for="btn-hide" class="d-flex gap-2 align-items-center mx-2 p-2 hover-1" routerLinkActive="color-1" routerLink="/dash/products" role="button">
+    <i class="fas fa-box-open text-secondary"></i>
+    <span>PRODUCTOS</span>
+  </label>
+  <label for="btn-hide" class="d-flex gap-2 align-items-center mx-2 p-2 hover-1" routerLinkActive="color-1" routerLink="/dash/purchases" role="button">
+    <i class="far fa-credit-card text-secondary"></i>
+    <span>COMPRAS</span>
+  </label>
+  <label for="btn-hide" class="d-flex gap-2 align-items-center mx-2 p-2 hover-1" routerLinkActive="color-1" routerLink="/dash/clients" role="button">
+    <i class="fas fa-user text-secondary"></i>
+    <span>CLIENTES</span>
+  </label>
+</div>
+<div class="div1"></div>

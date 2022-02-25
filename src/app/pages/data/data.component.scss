@@ -1,0 +1,19 @@
+.container {
+  width: 400px;
+}
+.btn-check:checked + label {
+  background-color: #fe9915;
+  color: #ffff;
+}
+.floating-data > .form-control:focus ~ label,
+.floating-data > .form-control:not(:placeholder-shown) ~ label,
+.floating-data > .form-select ~ label {
+  //padding: 10px !important;
+  margin-left: -80px;
+}
+.floating-data1 > .form-control:focus ~ label,
+.floating-data > .form-control:not(:placeholder-shown) ~ label,
+.floating-data > .form-select ~ label {
+  //padding: 10px !important;
+  margin-left: -110px;
+}

@@ -1,0 +1,45 @@
+<div class="overflow-auto p-5" >
+  <div class="d-flex gap-4 mb-4">
+    <h2 class="m-0">Productos</h2>
+    <button class="btn btn-1 ms-auto" (click)="openCreate()">Nuevo producto</button>
+  </div>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active text-gris" data-bs-toggle="tab" data-bs-target="#nav-MATERIALES" role="tab" aria-selected="true">MATERIALES</button>
+    <button class="nav-link text-gris" data-bs-toggle="tab" data-bs-target="#nav-EQUIPO" role="tab" aria-selected="false">Equipamiento</button>
+  </div>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-MATERIALES" role="tabpanel">
+      <div class="d-flex pt-4 pb-2">
+        <div class="position-relative ms-auto">
+          <input class="form-control" type="search">
+          <i class="fas fa-search position-absolute top-0 end-0 m-2 p-1 text-gris"></i>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Proveedor</th>
+              <th scope="col">Cantidad en stock</th>
+              <th scope="col">Precio de venta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr role="button" (click)="openDetail(null)">
+              <td scope="row">#247851200</td>
+              <td>Arena</td>
+              <td>Ambuja Cement</td>
+              <td>Jan 05, 2021</td>
+              <td>22000.0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="nav-EQUIPO" role="tabpanel">
+      no hay contenido
+    </div>
+  </div>
+</div>
